@@ -2,7 +2,7 @@
     "name": "whatsworse",
     "version": "1.0.0",
     "description": "",
-    "main": "server.js",
+    "main": "node server/server.js",
     "scripts": {
       "start": "node server/server.js"
     },
