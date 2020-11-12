@@ -1,7 +1,4 @@
-const dotenv = require('dotenv');
-let path = require('path')
-console.log(path.resolve(__dirname, '../.env'))
-dotenv.config({ path:path.resolve(__dirname, '../.env') });
+require('dotenv').config();
 var express = require('express');
 const CONNECTION = process.env.CONNECTION;
 const CONNECTION2 = process.env.CONNECTION2;
