@@ -33,8 +33,8 @@ function Home() {
         
         axios({
             method: 'post',
-            url: 'http://localhost:8000/api/vote',    //DEVELOPMENT
-            //url: window.location.origin+'/api/vote',  //PRODUCTION
+            //url: 'http://localhost:8000/api/vote',    //DEVELOPMENT
+            url: window.location.origin+'/api/vote',  //PRODUCTION
             data: pair
           })
         .then(function (response) {
@@ -49,8 +49,8 @@ function Home() {
 
     const loadPair = () => {
         setFadeOut(false);
-        fetch('http://localhost:8000/api/') //DEVELOPMENT
-        //fetch(window.location.origin+'/api/') //PRODUCTION
+        //fetch('http://localhost:8000/api/') //DEVELOPMENT
+        fetch(window.location.origin+'/api/') //PRODUCTION
         .then(async res => {
             return await res.json()
         })
@@ -71,8 +71,8 @@ function Home() {
         event.preventDefault();
         axios({
             method: 'post',
-            url: 'http://localhost:8000/api/new',    //DEVELOPMENT
-            //url: window.location.origin+'/api/new',  //PRODUCTION
+            //url: 'http://localhost:8000/api/new',    //DEVELOPMENT
+            url: window.location.origin+'/api/new',  //PRODUCTION
             data: {
               name: newThing
             }
