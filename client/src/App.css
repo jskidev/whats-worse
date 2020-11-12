@@ -317,9 +317,80 @@ button {
   outline: none;
 }
 
+.help {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+}
+
+.backdrop {
+  background-color: #e0c2ff;
+  z-index: 9999999;
+  height: 100vh;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.backdrop div {
+  padding: 20px;
+}
+
+.backdrop .neuModal {
+  background: #e0c2ff;
+  box-shadow:  17px 17px 34px #c1a7db, 
+              -17px -17px 34px #ffddff;
+  width: 50%;
+}
+
+.backdrop .neuButtonSecondary {
+  background: #e0c2ff;
+  box-shadow:  7px 7px 14px #c1a7db, 
+             -7px -7px 14px #ffddff;
+}
+
+.backdrop .neuButtonSecondary:active {
+  background: #e0c2ff;
+  box-shadow: inset 7px 7px 14px #c1a7db, 
+              inset -7px -7px 14px #ffddff;
+}
+
 @media only screen and (max-width: 800px) {
   .neuButton  {
     margin: 25px;
+  }
+  .backdrop .neuModal {
+    width: 75%;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .neuButton  {
+    margin: 25px;
+  }
+  .backdrop div {
+    padding: 10px;
+  }
+  .neuButton {
+    margin: 10px;
+  }
+  .neuModal {
+    margin: 10px;
+  }
+  form {
+    width: 75%;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .buttonContainer {
+    width: 100%;
+  }
+  .neuButton {
+    width: 75%;
   }
 }
 
