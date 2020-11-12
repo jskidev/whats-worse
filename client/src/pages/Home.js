@@ -40,6 +40,8 @@ function Home() {
         .then(function (response) {
             setVote(response.data);
             setDone(true);
+            setThing1({});
+            setThing2({});
         })
         .catch(function (error) {
             console.log(error);
