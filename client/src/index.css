@@ -1,0 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish&display=swap');
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Mulish', sans-serif;
+  margin: 0;
+}
