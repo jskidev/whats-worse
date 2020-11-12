@@ -33,15 +33,13 @@ function Home() {
         
         axios({
             method: 'post',
-            url: 'http://localhost:8000/api/vote',    //DEVELOPMENT
-            //url: window.location.origin+'/api/vote',  //PRODUCTION
+            //url: 'http://localhost:8000/api/vote',    //DEVELOPMENT
+            url: window.location.origin+'/api/vote',  //PRODUCTION
             data: pair
           })
         .then(function (response) {
             setVote(response.data);
             setDone(true);
-            //setTimeout(() => { loadPair(); }, 1000);
-            //loadPair();
         })
         .catch(function (error) {
             console.log(error);
@@ -50,9 +48,8 @@ function Home() {
 
     const loadPair = () => {
         setFadeOut(false);
-        
-        fetch('http://localhost:8000/api/') //DEVELOPMENT
-        //fetch(window.location.origin+'/api/') //PRODUCTION
+        //fetch('http://localhost:8000/api/') //DEVELOPMENT
+        fetch(window.location.origin+'/api/') //PRODUCTION
         .then(async res => {
             return await res.json()
         })
@@ -72,8 +69,8 @@ function Home() {
         event.preventDefault();
         axios({
             method: 'post',
-            url: 'http://localhost:8000/api/new',    //DEVELOPMENT
-            //url: window.location.origin+'/api/new',  //PRODUCTION
+            //url: 'http://localhost:8000/api/new',    //DEVELOPMENT
+            url: window.location.origin+'/api/new',  //PRODUCTION
             data: {
               name: newThing
             }
@@ -103,8 +100,6 @@ function Home() {
                 </header>
                 <div className="content">
                     <div className="buttonContainer">
-                        {//<div className={fadeOut && !done ? "loader fadeInFast" : "loader fadeOut"}>Loading...</div>
-                        }
                         <div className={fadeOut ? "neuModal fadeIn" : "neuModal fadeOut"}>
                             { !done ?
                                 <div className="loaderContainer">
@@ -121,9 +116,6 @@ function Home() {
                         </div>
                         <button className={fadeOut ? "neuButton fadeOut" : "neuButton fadeIn"} value='0' onClick={handleVote}>{thing1['name']}</button>
                         <button className={fadeOut ? "neuButton fadeOut" : "neuButton fadeIn"} value='1' onClick={handleVote}>{thing2['name']}</button>
-                        {/*<div className={fadeOut ? "snackBar fadeInFast" : "snackBar slideDown"}>
-                            {vote}
-                        </div>*/}
                     </div>
                     <a href="#newThing" className="neuLink">
                         <svg height="30" viewBox="0 0 21 21" width="30" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd" stroke="#2a2e3b" stroke-linecap="round" stroke-linejoin="round" transform="translate(6 4)"><path d="m7.328 6.67.001 5.658-5.658-.001" transform="matrix(-.70710678 .70710678 .70710678 .70710678 .965201 -.399799)"/><path d="m4.5.5v13"/></g></svg>

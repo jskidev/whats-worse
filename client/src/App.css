@@ -194,12 +194,6 @@ button {
   transition: visibility 0s 0.5s, opacity 0.5s linear;
 }
 
-.slideDown {
-  visibility: hidden;
-  opacity: 0;
-  transition: visibility 0.5s linear 2s, opacity 0.5s linear 2s;
-}
-
 .fadeIn {
   visibility: visible;
   opacity: 1;
