@@ -53,6 +53,23 @@
   align-items: center;
   flex-grow: 1;
   position: relative;
+  flex-wrap: wrap;
+}
+
+.neuModal {
+  border-radius: 10px;
+  background: #e7ecee;
+  box-shadow:  17px 17px 34px #cbd0d1, 
+             -17px -17px 34px #ffffff;
+  width: 75%;
+  height: 300px;
+  border: none;
+  margin: 50px;
+  font: inherit;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .neuButton {
@@ -110,6 +127,7 @@
   align-items: center;
   flex-direction: column;
   height: 100vh;
+  position: relative;
 }
 
 .formContainer h2 {
@@ -194,24 +212,30 @@ button {
   transition: opacity 0.5s linear;
 }
 
+.loaderContainer {
+  background: #e7ecee;
+  box-shadow:  7px 7px 14px #cbd0d1, 
+             -7px -7px 14px #ffffff;
+  width: 60px;
+  height: 60px;
+  border-radius: 40px;
+  position: absolute;
+  left: 45%;
+  top: 40%;
+}
+
 .loader,
 .loader:after {
   border-radius: 50%;
-  width: 10em;
-  height: 10em;
+  width: 75%;
+  height: 75%;
 }
 .loader {
-  margin: 60px auto;
-  font-size: 10px;
-  position: absolute;
   text-indent: -9999em;
-  border-top: 1.1em solid rgba(255, 255, 255, 0.2);
-  border-right: 1.1em solid rgba(255, 255, 255, 0.2);
-  border-bottom: 1.1em solid rgba(255, 255, 255, 0.2);
-  border-left: 1.1em solid #ffffff;
-  -webkit-transform: translateZ(0);
-  -ms-transform: translateZ(0);
-  transform: translateZ(0);
+  border-top: 8px solid #e7ecee;
+  border-right: 8px solid #e7ecee;
+  border-bottom: 8px  solid #e7ecee;
+  border-left: 8px  solid #ffffff;
   -webkit-animation: load8 1.1s infinite linear;
   animation: load8 1.1s infinite linear;
 }
@@ -236,6 +260,7 @@ button {
   }
 }
 
+
 .snackBar {
   position: absolute;
   bottom: 0;
@@ -245,4 +270,67 @@ button {
   box-shadow:  7px 7px 14px #cbd0d1, 
              -7px -7px 14px #ffffff;
   font: inherit;
+}
+
+.neuLinkBlu {
+  border-radius: 40px;
+  background: #b3e9ff;
+  box-shadow:  7px 7px 14px #93bfd1, 
+             -7px -7px 14px #d3ffff;
+  width: 50px;
+  height: 50px;
+  border: none;
+  margin: 30px;
+  font: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  position: absolute;
+  bottom: 0px;
+}
+
+.neuLinkBlu:active {
+  background: #b3e9ff;
+  box-shadow: inset 8px 8px 16px #93bfd1, 
+            inset -8px -8px 16px #d3ffff;
+}
+
+.neuButtonSecondary {
+  border-radius: 6px;
+  background: #e7ecee;
+  box-shadow:  7px 7px 14px #cbd0d1, 
+             -7px -7px 14px #ffffff;
+  width: 150px;
+  height: 50px;
+  border: none;
+  margin: 30px;
+  font: inherit;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.neuButtonSecondary:active {
+  border-radius: 6px;
+  background: #e7ecee;
+  box-shadow: inset 7px 7px 14px #cbd0d1, 
+              inset -7px -7px 14px #ffffff;
+  outline: none;
+}
+
+.neuButtonSecondary:focus {
+  outline: none;
+}
+
+@media only screen and (max-width: 800px) {
+  .neuButton  {
+    margin: 25px;
+  }
+}
+
+@media only screen and (max-height: 850px) {
+  .neuButton  {
+    height: 40%;
+  }
 }
