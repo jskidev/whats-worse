@@ -209,17 +209,6 @@ form label, input {
   width: 60px;
   height: 60px;
   border-radius: 40px;
-  position: absolute;
-  left: 45%;
-  top: 40%;
-}
-
-.loaderContainerMid {
-  background: #e7ecee;
-  box-shadow: 7px 7px 14px #cbd0d1, -7px -7px 14px #ffffff;
-  width: 60px;
-  height: 60px;
-  border-radius: 40px;
 }
 
 .loader,

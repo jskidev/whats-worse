@@ -32,7 +32,7 @@ function Leaderboard() {
                 <div className="content">
                     <div className="tableContainer">
                     { !hasLoaded ? 
-                    <div className="loaderContainerMid">
+                    <div className="loaderContainer">
                         <div className="loader"></div>
                     </div> 
                     :
