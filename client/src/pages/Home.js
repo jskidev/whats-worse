@@ -120,7 +120,7 @@ function Home() {
                                 </div> 
                                 :
                                 <>
-                                    <div>{vote}</div>
+                                    <div className="voteContent">{vote}</div>
                                     <button className="neuButtonSecondary" onClick={loadPair}>next</button>
                                 </>
                             }
