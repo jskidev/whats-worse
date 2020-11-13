@@ -332,8 +332,8 @@ form label, input {
   z-index: 9999999;
   height: 100%;
   width: 100%;
-  position: absolute;
-  top: 100%;
+  position: fixed;
+  top: 0;
   display: flex;
   justify-content: center;
   align-items: center;
