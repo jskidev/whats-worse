@@ -184,10 +184,6 @@ form label, input {
   outline: none;
 }
 
-button {
-  cursor: pointer;
-}
-
 .fadeOut {
   visibility: hidden;
   opacity: 0;
@@ -216,6 +212,14 @@ button {
   position: absolute;
   left: 45%;
   top: 40%;
+}
+
+.loaderContainerMid {
+  background: #e7ecee;
+  box-shadow: 7px 7px 14px #cbd0d1, -7px -7px 14px #ffffff;
+  width: 60px;
+  height: 60px;
+  border-radius: 40px;
 }
 
 .loader,
@@ -318,10 +322,9 @@ button {
 }
 
 .help {
-  position: fixed;
+  position: absolute;
   bottom: 0;
   right: 0;
-  margin: 15px!important;
 }
 
 .backdrop {
@@ -359,11 +362,58 @@ button {
               inset -7px -7px 14px #ffddff;
 }
 
+.tableContainer {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.neuTable {
+  border-radius: 10px;
+  background: #e7ecee;
+  box-shadow:  17px 17px 34px #cbd0d1, 
+             -17px -17px 34px #ffffff;
+  width: 500px;
+  border: none;
+  font: inherit;
+  border-collapse: collapse;
+}
+
+.neuTable th {
+  padding: 20px 0px 20px 0px;
+  text-align: center;
+  width: 50%;
+  border-bottom: 1px solid lightgray;
+}
+
+.neuTable td {
+  padding: 15px 40px 15px 40px;
+  width: 50%;
+}
+
+.name {
+  border-right: 0.5px solid lightgray;
+}
+
+.vote {
+  text-align: right;
+  border-left: 0.5px solid lightgray;
+}
+
 @media only screen and (max-width: 800px) {
   .neuButton  {
     margin: 25px;
   }
   .backdrop .neuModal {
+    width: 75%;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .neuTable  {
     width: 75%;
   }
 }
@@ -398,5 +448,16 @@ button {
 @media only screen and (max-height: 850px) {
   .neuButton  {
     height: 40%;
+  }
+}
+
+@media only screen and (max-height: 600px) {
+  .neuTable th {
+    padding: 10px 0px 10px 0px;
+  }
+  
+  .neuTable td {
+    padding: 5px 40px 5px 40px;
+    width: 50%;
   }
 }

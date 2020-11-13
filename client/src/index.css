@@ -8,3 +8,15 @@ body {
   font-family: 'Mulish', sans-serif;
   margin: 0;
 }
+
+input,
+textarea,
+button,
+select,
+a {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+button {
+  cursor: pointer;
+}

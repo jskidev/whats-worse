@@ -45,7 +45,6 @@ router.post('/api/vote', async (req, res) => {
         l_name: req.body.l_name
     }
     
-    
     const myDoc = await col.insertOne(docToInsert)
     .then(result=>{
         console.log('inserted:' + result.ops[0]._id);
@@ -80,6 +79,39 @@ router.post('/api/new', async (req, res) => {
 router.get('/api/leaderboard', async function(req, res) {
     //await client.connect();
     const db = client.db("whatsworse");
+    const col = db.collection("votes");
+    const myDoc = await col.find().toArray(function(err, documents) {
+        if (err) throw error;
+
+        var winners = [];
+        documents.forEach(doc => {
+            winners.push(doc['w_name']);
+        });
+
+        var uniqueWinners = new Set(winners); 
+        var uniqueWinnersArray = Array.from(uniqueWinners);
+        var winnersObjArray = [];
+
+        function count(toCount, allOccurences) {
+            for(var i = 0; i < toCount.length; i++) {
+              var count = 0;
+              for(var z = 0; z < allOccurences.length; z++) {
+                if (allOccurences[z] === toCount[i]) count++;
+              }
+             
+             winnersObjArray.push({name:toCount[i],total:count})
+            }
+        }
+        count(uniqueWinnersArray,winners);
+
+        winnersObjArray.sort(function(a, b){
+            return a.total-b.total
+        }).reverse();
+
+        winnersObjArray.length > 10 ? winnersObjArray.length  = 10 : winnersObjArray.length;
+
+        res.json(winnersObjArray);
+    });
 });
 
 function sanitizeString(str){
