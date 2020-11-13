@@ -54,7 +54,7 @@ router.post('/api/vote', async (req, res) => {
     })
     
     const myNewDoc = await col.find({ w_id: docToInsert.w_id, l_id: docToInsert.l_id }).toArray(function(err, documents) {
-        res.json(req.body.w_name + ' has beaten ' + req.body.l_name + ' ' + documents.length + documents.length == 1 ? ' time' : ' times');
+        res.json(req.body.w_name + ' has beaten ' + req.body.l_name + ' ' + documents.length + (documents.length == 1 ? ' time' : ' times'));
     });
 
 });
